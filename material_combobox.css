@@ -1,0 +1,254 @@
+﻿.material-combobox {
+    display: inline-block;
+    position: relative;
+    
+    height: auto;
+    padding: 0 8px;
+    box-sizing: border-box;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+
+    color: rgba(0, 0, 0, 0.54);
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.material-combobox input {
+    width: 100%;
+
+    margin-top: 16px;
+    margin-bottom: 8px;
+    padding: 4px 0;
+
+    background-color: transparent;
+
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+    border-radius: 0;
+
+    outline: none;
+
+    font-size: 13px;
+}
+
+.material-combobox.no-float input {
+    margin-top: 8px;
+}
+
+.material-combobox input:hover {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.87);
+    margin-bottom: 7px;
+}
+
+.material-combobox.focus input {
+    border-bottom: 2px solid #2979FF;
+    margin-bottom: 7px;
+}
+
+.material-combobox .material-combobox-label {
+    position: absolute;
+    top: 20px;
+    line-height: 15px;
+    font-size: 13px;
+
+    pointer-events: none;
+
+    -webkit-transition: font-size 0.25s, top 0.25s, color 0.25s;
+    transition: font-size 0.25s, top 0.25s, color 0.25s;
+}
+
+.material-combobox.no-float .material-combobox-label {
+    top: 12px;
+}
+
+.material-combobox.focus.float .material-combobox-label, .material-combobox.has-value.float .material-combobox-label {
+    position: absolute;
+    top: 4px;
+    line-height: 16px;
+    font-size: 10px;
+    color: #2979FF;
+}
+
+.material-combobox.focus.no-float .material-combobox-label, .material-combobox.has-value.no-float .material-combobox-label {
+    display: none;
+}
+
+
+.material-combobox ul {
+    display: none;
+    position: absolute;
+
+    top: 42px;
+    left: 8px;
+    width: max-content;
+    margin: 0;
+    padding: 0;
+
+    list-style-type: none;
+
+    border-radius: 2px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+    color: rgba(0, 0, 0, 0.87);
+    background-color: white;
+    z-index: 1000;
+}
+
+.material-combobox li {
+    padding: 0 16px;
+    height: 32px;
+    line-height: 32px;
+    cursor: pointer;
+}
+
+.material-combobox li * {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.material-combobox li.check {
+    padding: 0 16px;
+    position: relative;
+    height: 32px;
+    line-height: 32px;
+    cursor: pointer;
+}
+
+.material-combobox li.check.unchecked i {
+    color: transparent;
+}
+
+.material-combobox li.check span {
+    position: absolute;
+    right: 16px;
+    left: 50px;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.material-combobox li:hover {
+    background-color: #EEEEEE;
+}
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/* Spinner */
+.material-combobox .spinner {
+    display: none;
+    position: absolute;
+    top: 18px;
+    right: 8px;
+
+    -webkit-animation: rotator 1.4s linear infinite;
+    animation: rotator 1.4s linear infinite;
+}
+
+.material-combobox.indeterminate .spinner {
+    display: block;
+}
+
+@-webkit-keyframes rotator {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+  }
+}
+
+@keyframes rotator {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+  }
+}
+.path {
+  stroke-dasharray: 41;
+  stroke-dashoffset: 0;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+          animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+}
+
+@-webkit-keyframes colors {
+  0% {
+    stroke: #4285F4;
+  }
+  25% {
+    stroke: #DE3E35;
+  }
+  50% {
+    stroke: #F7C223;
+  }
+  75% {
+    stroke: #1B9A59;
+  }
+  100% {
+    stroke: #4285F4;
+  }
+}
+
+@keyframes colors {
+  0% {
+    stroke: #4285F4;
+  }
+  25% {
+    stroke: #DE3E35;
+  }
+  50% {
+    stroke: #F7C223;
+  }
+  75% {
+    stroke: #1B9A59;
+  }
+  100% {
+    stroke: #4285F4;
+  }
+}
+@-webkit-keyframes dash {
+  0% {
+    stroke-dashoffset: 41;
+  }
+  50% {
+    stroke-dashoffset: 10.25;
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: 41;
+    -webkit-transform: rotate(450deg);
+            transform: rotate(450deg);
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 41;
+  }
+  50% {
+    stroke-dashoffset: 10.25;
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: 41;
+    -webkit-transform: rotate(450deg);
+            transform: rotate(450deg);
+  }
+}
